@@ -21,23 +21,28 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Cache Maven dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
-      - name: Configure Git for Maven
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Perform Maven Release
+      - name: Publish package
+        run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mvn release:prepare -Darguments="-DskipTests"
-          mvn release:perform -Darguments="-DskipTests"
+
+#      - name: Cache Maven dependencies
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.m2/repository
+#          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-maven-
+
+#      - name: Configure Git for Maven
+#        run: |
+#          git config user.name "github-actions[bot]"
+#          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+#      - name: Perform Maven Release
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: |
+#          mvn release:prepare -Darguments="-DskipTests"
+#          mvn release:perform -Darguments="-DskipTests"
 
