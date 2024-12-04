@@ -3,16 +3,19 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
+    <name>CIMET Extraction Library</name>
     <groupId>edu.university.ecs.lab</groupId>
     <artifactId>cimet-extract-lib</artifactId>
     <!-- Version for tagging the library -->
     <version>1.0.0</version>
-    <properties>
-        <maven.compiler.target>16</maven.compiler.target>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.parameters>true</maven.compiler.parameters>
-        <compiler-plugin.version>3.8.1</compiler-plugin.version>
-    </properties>
+    <url>https://github.com/cloudhubs/cimet-extract-lib</url>
+
+    <scm>
+        <connection>scm:git:git://github.com/cloudhubs/cimet-extract-lib.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:cloudhubs/cimet-extract-lib.git</developerConnection>
+        <url>https://github.com/cloudhubs/cimet-extract-lib</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <!-- Github distribution management for posting maven library -->
     <distributionManagement>
@@ -22,6 +25,13 @@
             <url>https://maven.pkg.github.com/cloudhubs/cimet-extract-lib</url>
         </repository>
     </distributionManagement>
+
+    <properties>
+        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.parameters>true</maven.compiler.parameters>
+        <compiler-plugin.version>3.8.1</compiler-plugin.version>
+    </properties>
 
     <packaging>jar</packaging>
 
