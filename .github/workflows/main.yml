@@ -38,9 +38,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mvn release:prepare -Darguments="-DskipTests" \
-            -Dusername=${{ secrets.GITHUB_ACTOR }} \
-            -Dpassword=${{ secrets.GITHUB_TOKEN }}
-          mvn release:perform -Darguments="-DskipTests" \
-            -Dusername=${{ secrets.GITHUB_ACTOR }} \
-            -Dpassword=${{ secrets.GITHUB_TOKEN }}
+          mvn release:prepare -Darguments="-DskipTests"
+          mvn release:perform -Darguments="-DskipTests"
+
