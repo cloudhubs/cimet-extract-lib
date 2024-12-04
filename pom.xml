@@ -9,8 +9,8 @@
     <url>https://github.com/cloudhubs/cimet-extract-lib</url>
 
     <scm>
-        <connection>scm:git:git://github.com/cloudhubs/cimet-extract-lib.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:cloudhubs/cimet-extract-lib.git</developerConnection>
+        <connection>scm:git:https://github.com/cloudhubs/cimet-extract-lib.git</connection>
+        <developerConnection>scm:git:https://github.com/cloudhubs/cimet-extract-lib.git</developerConnection>
         <url>https://github.com/cloudhubs/cimet-extract-lib</url>
         <tag>v1.0.0</tag>
     </scm>
